@@ -1,0 +1,35 @@
+### Add Contact
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName":"Anushka",
+  "lastName":"Singhal",
+  "address":"Delhi",
+  "city":"Delhi",
+  "state":"Delhi",
+  "zip":"110096",
+  "phoneNumber":"9876543210",
+  "email":"anu@gmail.com"
+}
+
+### Get All Contacts
+GET http://localhost:8080/contacts
+
+### Update Contact
+PUT http://localhost:8080/contacts/1
+Content-Type: application/json
+
+{
+  "firstName":"Anushka",
+  "lastName":"Sharma",
+  "address":"Noida",
+  "city":"Noida",
+  "state":"UP",
+  "zip":"201301",
+  "phoneNumber":"9999999999",
+  "email":"anu@gmail.com"
+}
+
+### Delete Contact
+DELETE http://localhost:8080/contacts/1
