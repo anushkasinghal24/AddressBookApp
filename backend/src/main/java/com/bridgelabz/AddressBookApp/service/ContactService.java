@@ -1,12 +1,12 @@
 package com.bridgelabz.AddressBookApp.service;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.bridgelabz.AddressBookApp.dto.ContactDTO;
 import com.bridgelabz.AddressBookApp.model.Contact;
 import com.bridgelabz.AddressBookApp.repository.ContactRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ContactService {
