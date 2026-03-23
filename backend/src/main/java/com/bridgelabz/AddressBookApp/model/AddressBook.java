@@ -1,4 +1,6 @@
 package com.bridgelabz.AddressBookApp.model;
+import lombok.Data;
+
 import java.util.*;
 @Data
 public class AddressBook {

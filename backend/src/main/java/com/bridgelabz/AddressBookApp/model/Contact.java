@@ -11,12 +11,13 @@ public class Contact {
     private String zip;
     private String phoneNumber;
     private String email;
+    private String bookName;
 
     public Contact() {}
 
     public Contact(int id,String firstName,String lastName,String address,
                    String city,String state,String zip,
-                   String phoneNumber,String email){
+                   String phoneNumber,String email, String bookName){
 
         this.id = id;
         this.firstName = firstName;
@@ -27,6 +28,7 @@ public class Contact {
         this.zip = zip;
         this.phoneNumber = phoneNumber;
         this.email = email;
+        this.bookName = bookName;
     }
 
     public int getId() { return id; }
@@ -55,4 +57,19 @@ public class Contact {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
+
+//    public String getbookName(){
+//        return bookName;
+//    }
+//    public void setbookName(String bookName){
+//        this.bookName = bookName;
+//    }
+
+    public String getBookName() {
+        return bookName;
+    }
+
+    public void setBookName(String bookName) {
+        this.bookName = bookName;
+    }
 }

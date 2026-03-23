@@ -9,4 +9,5 @@ public class ContactDTO {
     public String zip;
     public String phoneNumber;
     public String email;
+
 }

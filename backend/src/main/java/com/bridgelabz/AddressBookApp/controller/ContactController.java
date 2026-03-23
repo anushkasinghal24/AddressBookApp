@@ -1,5 +1,6 @@
 package com.bridgelabz.AddressBookApp.controller;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,10 +23,7 @@ public class ContactController {
     @Autowired
     private ContactService contactService;
 
-    @PostMapping
-    public Contact createContact(@RequestBody ContactDTO dto){
-        return contactService.addContact(dto);
-    }
+
 
     @GetMapping
     public List<Contact> getContacts(){
@@ -37,10 +35,63 @@ public class ContactController {
                                  @RequestBody ContactDTO dto){
         return contactService.updateContact(id,dto);
     }
+    @GetMapping("/sort/city/{city}")
+    public List<Contact> sortByCityFiltered(@PathVariable String city){
+        return contactService.sortByCity(city);
+    }
+    @GetMapping("/search/city/{city}")
+    public List<Contact> searchByCity(@PathVariable String city){
+        return contactService.searchByCity(city);
+    }
+    @GetMapping("/group/city")
+    public Map<String, List<Contact>> groupByCity(){
+        return contactService.groupByCity();
+    }
+    @GetMapping("/count/city")
+    public Map<String, Long> countByCity(){
+        return contactService.countByCity();
+    }
+    @GetMapping("/sort/name")
+    public List<Contact> sortByName(){
+        return contactService.sortByName();
+    }
+    @GetMapping("/sort/city")
+    public List<Contact> sortByCity(){
+        return contactService.sortByCity();
+    }
 
     @DeleteMapping("/{id}")
     public String deleteContact(@PathVariable int id){
         contactService.deleteContact(id);
         return "Contact Deleted Successfully";
     }
+
+    @PostMapping("/book/{name}")
+    public String createBook(@PathVariable String name){
+        return contactService.createAddressBook(name);
+    }
+
+    @PostMapping("/{bookName}")
+    public Contact addContact(@PathVariable String bookName,
+                              @RequestBody ContactDTO dto){
+        return contactService.addContact(bookName, dto);
+    }
+    @GetMapping("/sort/name/{bookName}")
+    public List<Contact> sortByName(@PathVariable String bookName){
+        return contactService.sortByName(bookName);
+    }
+    @GetMapping("/count/state")
+    public Map<String, Long> countByState(){
+        return contactService.countByState();
+    }
+    @PutMapping("/update/{firstName}/{lastName}")
+    public Contact updateByName(@PathVariable String firstName,
+                                @PathVariable String lastName,
+                                @RequestBody ContactDTO dto){
+
+        return contactService.updateByName(firstName, lastName, dto);
+    }
+
+
+
 }
